@@ -1,0 +1,39 @@
+//
+//  WeatherModel.swift
+//  Clima
+//
+//  Created by Mohamed Jaber on 11/23/20.
+//  Copyright © 2020 App Brewery. All rights reserved.
+//
+
+import Foundation
+
+struct WeatherModel{
+    
+    let cityName: String
+    let conditionID: Int
+    let temperature: Double
+    let humidity: Double
+    let windSpeed: Double
+    let description: String
+    var conditionName: String {//This called computed properties
+        switch conditionID {
+                case 200...232:
+                    return "cloud.bolt"
+                case 300...321:
+                    return "cloud.drizzle"
+                case 500...531:
+                    return "cloud.rain"
+                case 600...622:
+                    return "cloud.snow"
+                case 701...781:
+                    return "cloud.fog"
+                case 800:
+                    return "sun.max"
+                case 801...804:
+                    return "cloud.bolt"
+                default:
+                    return "cloud"
+                }
+    }
+}
